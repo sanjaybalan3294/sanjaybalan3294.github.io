@@ -148,14 +148,50 @@ function initTheme() {
   }
 }
 
-// Project Filter Tabs
+// Project Filter Tabs & Live Instant Search
 function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
+  const searchInput = document.getElementById('project-search');
+  const clearSearchBtn = document.getElementById('clear-search-btn');
+  const resetFilterBtn = document.getElementById('reset-filter-btn');
+  const noProjectsFound = document.getElementById('no-projects-found');
+
+  let currentCategory = 'all';
+  let searchQuery = '';
+
+  function applyFilters() {
+    let visibleCount = 0;
+
+    projectCards.forEach(card => {
+      const categories = (card.getAttribute('data-category') || '').toLowerCase().split(' ');
+      const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+      const cardText = card.innerText.toLowerCase();
+
+      const matchesCategory = (currentCategory === 'all') || categories.includes(currentCategory);
+      const matchesSearch = !searchQuery || keywords.includes(searchQuery) || cardText.includes(searchQuery);
+
+      if (matchesCategory && matchesSearch) {
+        card.style.display = ''; // Restore flexbox layout
+        card.style.opacity = '1';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+        card.style.opacity = '0';
+      }
+    });
+
+    if (noProjectsFound) {
+      if (visibleCount === 0) {
+        noProjectsFound.classList.remove('hidden');
+      } else {
+        noProjectsFound.classList.add('hidden');
+      }
+    }
+  }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Update active tab styling
       filterBtns.forEach(b => {
         b.classList.remove('active', 'bg-blue-600', 'text-white');
         b.classList.add('text-slate-400', 'hover:text-white', 'hover:bg-slate-800/60');
@@ -163,20 +199,55 @@ function initProjectFilters() {
       btn.classList.add('active', 'bg-blue-600', 'text-white');
       btn.classList.remove('text-slate-400', 'hover:text-white', 'hover:bg-slate-800/60');
 
-      const filter = btn.getAttribute('data-filter');
-
-      projectCards.forEach(card => {
-        const categories = card.getAttribute('data-category').split(' ');
-        if (filter === 'all' || categories.includes(filter)) {
-          card.style.display = 'block';
-          card.style.opacity = '1';
-        } else {
-          card.style.display = 'none';
-          card.style.opacity = '0';
-        }
-      });
+      currentCategory = btn.getAttribute('data-filter');
+      applyFilters();
     });
   });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      if (clearSearchBtn) {
+        if (searchQuery.length > 0) {
+          clearSearchBtn.classList.remove('hidden');
+        } else {
+          clearSearchBtn.classList.add('hidden');
+        }
+      }
+      applyFilters();
+    });
+  }
+
+  if (clearSearchBtn) {
+    clearSearchBtn.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchQuery = '';
+        clearSearchBtn.classList.add('hidden');
+        applyFilters();
+      }
+    });
+  }
+
+  if (resetFilterBtn) {
+    resetFilterBtn.addEventListener('click', () => {
+      currentCategory = 'all';
+      searchQuery = '';
+      if (searchInput) searchInput.value = '';
+      if (clearSearchBtn) clearSearchBtn.classList.add('hidden');
+
+      filterBtns.forEach(b => {
+        if (b.getAttribute('data-filter') === 'all') {
+          b.classList.add('active', 'bg-blue-600', 'text-white');
+          b.classList.remove('text-slate-400', 'hover:text-white', 'hover:bg-slate-800/60');
+        } else {
+          b.classList.remove('active', 'bg-blue-600', 'text-white');
+          b.classList.add('text-slate-400', 'hover:text-white', 'hover:bg-slate-800/60');
+        }
+      });
+      applyFilters();
+    });
+  }
 }
 
 // Project Deep Dive Modal
