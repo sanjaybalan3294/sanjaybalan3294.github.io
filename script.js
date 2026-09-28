@@ -2,6 +2,34 @@
 
 // Project Deep-Dive Database
 const projectsData = {
+  'ey-humanizer': {
+    title: 'HUMANIZER | Enterprise People Analytics & Agentic AI Platform',
+    badge: 'Flagship Enterprise Consulting Platform (EY C&I)',
+    tagline: 'Azure Lakehouse Medallion architecture, predictive flight risk ML (ROC-AUC 0.81), and autonomous multi-agent copilot translating data into empathetic leadership action.',
+    metrics: [
+      { label: 'Workforce Records', value: '6,000' },
+      { label: 'ML ROC-AUC', value: '0.811' },
+      { label: 'Agent Squad', value: '4 Agents' },
+      { label: 'At-Risk Capital', value: '$126.2M' }
+    ],
+    overview: 'Engineered specifically for enterprise consulting (EY Clients & Industries and People Advisory Services), HUMANIZER bridges the critical gap where raw HR statistics fail to drive change. It combines an Azure Synapse Kimball star-schema lakehouse, Gradient Boosting flight risk classification, and an autonomous Copilot Studio multi-agent squad (DataExtraction, RiskDiagnostic, HumanizerStoryteller, and GovernanceEthics) to turn cold telemetry into empathetic, executive-ready retention playbooks and 1-on-1 manager conversation guides.',
+    architecture: [
+      { step: 'Tier 1: Medallion Lakehouse ETL (Azure Synapse)', desc: 'Engineered Bronze raw ingestion, Silver GDPR SHA-256 salted pseudonymization, and Gold Kimball star schema marts (dim_employee SCD Type 2, dim_department, fact_attrition_risk, fact_engagement_pulse).' },
+      { step: 'Tier 2: Predictive Flight Risk & Burnout ML', desc: 'Trained Gradient Boosting ensemble classifier achieving 0.811 ROC-AUC, isolating burnout velocity (41.6%), compa-ratio deficits (7.3%), and overtime strain (11.5%).' },
+      { step: 'Tier 3: Autonomous Multi-Agent Copilot Squad', desc: 'Constructed an autonomous 4-agent workflow that retrieves Gold marts, pinpoints root-cause drivers, generates empathetic executive narratives with 1-on-1 conversation scripts, and audits for GDPR & algorithmic fairness.' },
+      { step: 'Tier 4: Executive Decision-Support Dashboard & Power BI', desc: 'Designed interactive corporate dashboard featuring live KPI counters, Chart.js trend curves, and the signature Humanizer Studio with one-click consultant retention playbooks.' }
+    ],
+    keyInsights: [
+      'Proved that high utilization (>95%) combined with compa-ratio deficits (<0.90) drives 74% of voluntary attrition among Senior Consultants.',
+      'Identified severe burnout concentration in Global Delivery Hubs (Gurgaon & Bangalore) due to asynchronous time-zone compression.',
+      'Demonstrated that empathetic, structured 1-on-1 manager interventions protect up to $59.8M in avoided recruitment and attrition exposure.'
+    ],
+    stack: ['Azure Synapse', 'Python 3.12', 'Scikit-Learn', 'SQL Star Schema', 'Power BI / DAX', 'Multi-Agent AI', 'GDPR Security'],
+    githubUrls: [
+      { label: 'Live Interactive Dashboard', url: 'humanizer-people-analytics/dashboard/index.html' },
+      { label: 'Browse Code & Architecture', url: 'humanizer-people-analytics/README.md' }
+    ]
+  },
   'ai-workforce': {
     title: 'AI Workforce Intelligence & Disruption Analytics',
     badge: 'Flagship AICTE | IBM SkillsBuild Project',
@@ -72,11 +100,12 @@ const projectsData = {
       { step: 'Tableau Interactive Dashboard', desc: 'Designed interactive visualizations featuring customer age cohort slices, policy type breakdowns, and expiration timeline trackers.' }
     ],
     keyInsights: [
-      'Customer Age Segment: Senior cohort (60+) forms the largest customer base with 1,807 policies, followed by 46-60 (1,110 policies).',
-      'Policy Distribution: Health leads with 1,316 policies, followed by Property (1,236) and Life (1,234).',
-      'Expiration Early Warning: 134 Property policies expire in 2026, pinpointing urgent renewal campaign priorities for retention teams.'
+      'Extracted and analyzed 5,000 policies across 3,148 customers using complex SQL joins, CTEs, and window functions across 4 relational tables to aggregate policyholder cohorts.',
+      'Flagged 134 high-risk policies expiring in 2026 through date-range filtering, isolating concentration risk within Property coverage.',
+      'Quantified INR 251M+ in total claims and tracked annual premium trends to identify key inflection points in portfolio growth.',
+      'Designed an interactive 15-visual Power BI dashboard displaying policyholder demographics, claim frequency, and regional distribution.'
     ],
-    stack: ['MySQL', 'Power BI', 'Tableau', 'DAX', 'SQL Aggregations', 'Data Modeling'],
+    stack: ['MySQL', 'Power BI', 'Tableau', 'DAX', 'SQL Aggregations', 'Data Modeling', 'Star Schema'],
     githubUrls: [
       { label: 'SQL Repository', url: 'https://github.com/sanjaybalan3294/Insurance-Analytics-SQL' },
       { label: 'Power BI Repository', url: 'https://github.com/sanjaybalan3294/Insurance-Analytics-PowerBI' },
@@ -84,25 +113,25 @@ const projectsData = {
     ]
   },
   'movie-correlation': {
-    title: 'Movie Industry Correlation & Revenue Analysis',
-    badge: 'Statistical EDA & Econometrics',
-    tagline: 'Investigating macro financial variables and audience engagement driving box office revenue.',
+    title: 'Movie Industry Data Analysis',
+    badge: 'Python & Statistical Modeling',
+    tagline: 'Exploratory data analysis identifying primary drivers of box office gross revenue.',
     metrics: [
-      { label: 'Primary Correlation', value: 'r = 0.74' },
+      { label: 'Budget Correlation', value: 'r = 0.74' },
       { label: 'Vote Correlation', value: 'r = 0.61' },
       { label: 'Methodology', value: 'Pearson Matrix' },
       { label: 'Environment', value: 'Jupyter' }
     ],
-    overview: 'Exploratory data analysis (EDA) and statistical correlation study on the movie industry dataset to isolate the economic drivers and audience indicators most tightly coupled to worldwide box office gross.',
+    overview: 'Conducted end-to-end exploratory data analysis on movie industry datasets, performing data cleaning, duplicate checks, and missing-value treatment. Evaluated correlation across numerical and categorical features to identify primary revenue drivers.',
     architecture: [
       { step: 'Data Cleansing & Preprocessing', desc: 'Treated missing records, resolved duplicate entries, standardized release dates and budgets, and validated data types.' },
       { step: 'Feature Correlation & Matrix Computation', desc: 'Computed Pearson correlation coefficients across numerical and categorical variables (budget, votes, score, runtime, year).' },
-      { step: 'Statistical Visualizations', desc: 'Generated high-resolution correlation heatmaps, regression scatter plots with Seaborn, and categorical distribution charts.' }
+      { step: 'Statistical Visualizations', desc: 'Developed regression plots and correlation heatmaps to visualize complex feature relationships and extract key business patterns.' }
     ],
     keyInsights: [
-      'Production Budget is the single strongest predictor of gross earnings with a strong positive correlation of r = 0.74.',
-      'Audience Votes demonstrated a significant secondary correlation of r = 0.61, highlighting the power of audience engagement.',
-      'Metrics like IMDb score and runtime showed comparatively weaker direct linear correlations with total revenue.'
+      'Conducted end-to-end exploratory data analysis on movie industry datasets, performing data cleaning, duplicate checks, and missing-value treatment.',
+      'Evaluated correlation across numerical and categorical features, identifying budget (0.74) and audience votes (0.61) as primary revenue drivers.',
+      'Developed regression plots and correlation heatmaps to visualize complex feature relationships and extract key business patterns.'
     ],
     stack: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Jupyter Notebook'],
     githubUrl: 'https://github.com/sanjaybalan3294/Movie-Correlation-Analysis-Python'
