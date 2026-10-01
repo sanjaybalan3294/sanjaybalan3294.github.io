@@ -1,0 +1,85 @@
+service_line,practice_group,office_city,region,department_key
+Consulting,Technology Consulting,Frankfurt,EMEIA/Germany,1
+Strategy & Transactions,Strategy & Execution,Bangalore,EMEIA/India,2
+Consulting,People Advisory Services,New York,Americas/US,3
+Consulting,Technology Consulting,Bangalore,EMEIA/India,4
+Consulting,People Advisory Services,Bangalore,EMEIA/India,5
+Strategy & Transactions,Transaction Diligence,Chicago,Americas/US,6
+Tax,Indirect Tax & Transfer Pricing,Bangalore,EMEIA/India,7
+Tax,Direct Tax,Gurgaon,EMEIA/India,8
+Consulting,Business Consulting,Singapore,APAC/Singapore,9
+Tax,Direct Tax,Frankfurt,EMEIA/Germany,10
+Consulting,Business Consulting,Gurgaon,EMEIA/India,11
+Tax,Global Compliance,Chicago,Americas/US,12
+Strategy & Transactions,Corporate Finance,Gurgaon,EMEIA/India,13
+Strategy & Transactions,Transaction Diligence,Gurgaon,EMEIA/India,14
+Consulting,Business Consulting,London,EMEIA/UK,15
+Tax,Direct Tax,London,EMEIA/UK,16
+Strategy & Transactions,Corporate Finance,London,EMEIA/UK,17
+Strategy & Transactions,Corporate Finance,Frankfurt,EMEIA/Germany,18
+Strategy & Transactions,Transaction Diligence,New York,Americas/US,19
+Strategy & Transactions,Strategy & Execution,Singapore,APAC/Singapore,20
+Assurance,Climate Change & Sustainability,Gurgaon,EMEIA/India,21
+Assurance,Forensic & Integrity,New York,Americas/US,22
+Tax,Direct Tax,Bangalore,EMEIA/India,23
+Strategy & Transactions,Strategy & Execution,Chicago,Americas/US,24
+Consulting,Technology Consulting,Singapore,APAC/Singapore,25
+Strategy & Transactions,Corporate Finance,Bangalore,EMEIA/India,26
+Consulting,Business Consulting,New York,Americas/US,27
+Assurance,Forensic & Integrity,London,EMEIA/UK,28
+Consulting,People Advisory Services,Frankfurt,EMEIA/Germany,29
+Tax,Global Compliance,London,EMEIA/UK,30
+Strategy & Transactions,Strategy & Execution,London,EMEIA/UK,31
+Consulting,People Advisory Services,London,EMEIA/UK,32
+Consulting,Technology Consulting,London,EMEIA/UK,33
+Consulting,People Advisory Services,Singapore,APAC/Singapore,34
+Strategy & Transactions,Corporate Finance,New York,Americas/US,35
+Strategy & Transactions,Corporate Finance,Singapore,APAC/Singapore,36
+Tax,Indirect Tax & Transfer Pricing,Frankfurt,EMEIA/Germany,37
+Strategy & Transactions,Strategy & Execution,Gurgaon,EMEIA/India,38
+Consulting,People Advisory Services,Chicago,Americas/US,39
+Assurance,Audit Services,Chicago,Americas/US,40
+Assurance,Audit Services,Singapore,APAC/Singapore,41
+Assurance,Audit Services,Gurgaon,EMEIA/India,42
+Assurance,Climate Change & Sustainability,New York,Americas/US,43
+Assurance,Forensic & Integrity,Gurgaon,EMEIA/India,44
+Consulting,Business Consulting,Frankfurt,EMEIA/Germany,45
+Assurance,Audit Services,New York,Americas/US,46
+Assurance,Audit Services,Bangalore,EMEIA/India,47
+Assurance,Forensic & Integrity,Singapore,APAC/Singapore,48
+Consulting,People Advisory Services,Gurgaon,EMEIA/India,49
+Tax,Indirect Tax & Transfer Pricing,London,EMEIA/UK,50
+Consulting,Business Consulting,Chicago,Americas/US,51
+Consulting,Technology Consulting,Chicago,Americas/US,52
+Strategy & Transactions,Transaction Diligence,London,EMEIA/UK,53
+Assurance,Forensic & Integrity,Frankfurt,EMEIA/Germany,54
+Tax,Global Compliance,Gurgaon,EMEIA/India,55
+Assurance,Climate Change & Sustainability,Singapore,APAC/Singapore,56
+Tax,Direct Tax,Singapore,APAC/Singapore,57
+Tax,Indirect Tax & Transfer Pricing,Singapore,APAC/Singapore,58
+Strategy & Transactions,Strategy & Execution,Frankfurt,EMEIA/Germany,59
+Assurance,Climate Change & Sustainability,London,EMEIA/UK,60
+Tax,Indirect Tax & Transfer Pricing,Chicago,Americas/US,61
+Strategy & Transactions,Strategy & Execution,New York,Americas/US,62
+Strategy & Transactions,Corporate Finance,Chicago,Americas/US,63
+Tax,Indirect Tax & Transfer Pricing,New York,Americas/US,64
+Assurance,Climate Change & Sustainability,Frankfurt,EMEIA/Germany,65
+Assurance,Climate Change & Sustainability,Bangalore,EMEIA/India,66
+Tax,Global Compliance,New York,Americas/US,67
+Tax,Indirect Tax & Transfer Pricing,Gurgaon,EMEIA/India,68
+Assurance,Forensic & Integrity,Bangalore,EMEIA/India,69
+Strategy & Transactions,Transaction Diligence,Bangalore,EMEIA/India,70
+Tax,Global Compliance,Frankfurt,EMEIA/Germany,71
+Assurance,Audit Services,Frankfurt,EMEIA/Germany,72
+Consulting,Business Consulting,Bangalore,EMEIA/India,73
+Strategy & Transactions,Transaction Diligence,Frankfurt,EMEIA/Germany,74
+Tax,Direct Tax,Chicago,Americas/US,75
+Tax,Global Compliance,Singapore,APAC/Singapore,76
+Tax,Direct Tax,New York,Americas/US,77
+Assurance,Forensic & Integrity,Chicago,Americas/US,78
+Tax,Global Compliance,Bangalore,EMEIA/India,79
+Consulting,Technology Consulting,New York,Americas/US,80
+Assurance,Climate Change & Sustainability,Chicago,Americas/US,81
+Consulting,Technology Consulting,Gurgaon,EMEIA/India,82
+Assurance,Audit Services,London,EMEIA/UK,83
+Strategy & Transactions,Transaction Diligence,Singapore,APAC/Singapore,84

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUMANIZER | EY People Analytics & Agentic AI Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Chart.js for High-Performance Enterprise Telemetry Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Enterprise Header -->
+    <header class="app-header">
+      <div class="brand-section">
+        <div class="ey-logo-badge">EY</div>
+        <div class="header-title">
+          <h1>HUMANIZER</h1>
+          <p>People Analytics Intelligence & Agentic AI Copilot • Clients & Industries (C&I)</p>
+        </div>
+      </div>
+      <div class="header-pills">
+        <span class="pill active">● Live Medallion Mart</span>
+        <span class="pill">Azure Synapse / Lakehouse</span>
+        <span class="pill">GradientBoosting (ROC-AUC 0.81)</span>
+        <span class="pill">GDPR Pseudonymized</span>
+        <span class="pill">Copilot Studio Squad</span>
+      </div>
+    </header>
+
+    <!-- Executive KPI Grid -->
+    <section class="kpi-grid">
+      <div class="kpi-card yellow">
+        <div class="kpi-label">Active Headcount</div>
+        <div class="kpi-value">6,000</div>
+        <div class="kpi-subtext">Global C&I Consulting & Delivery Staff</div>
+      </div>
+      <div class="kpi-card red">
+        <div class="kpi-label">Annualized Attrition</div>
+        <div class="kpi-value">28.6%</div>
+        <div class="kpi-subtext">Baseline: 18.0% | Variance: +10.6%</div>
+      </div>
+      <div class="kpi-card orange">
+        <div class="kpi-label">High Flight-Risk Talent</div>
+        <div class="kpi-value">886</div>
+        <div class="kpi-subtext">ML Predicted Flight Probability &gt; 65%</div>
+      </div>
+      <div class="kpi-card blue">
+        <div class="kpi-label">Avg Compa-Ratio</div>
+        <div class="kpi-value">0.958</div>
+        <div class="kpi-subtext">Market Midpoint Deficit: -4.2%</div>
+      </div>
+      <div class="kpi-card red">
+        <div class="kpi-label">At-Risk Replacement Cost</div>
+        <div class="kpi-value">$126.2M</div>
+        <div class="kpi-subtext">150% Salary Benchmark per Exit</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-label">Copilot Empathy Score</div>
+        <div class="kpi-value" id="empathyScoreDisplay">4.9 / 5.0</div>
+        <div class="kpi-subtext">Human-Centered Consulting Fidelity</div>
+      </div>
+    </section>
+
+    <!-- The Signature "Humanizer" Studio -->
+    <section class="studio-section">
+      <div class="studio-header">
+        <div class="studio-title">
+          <h2>The "Humanizer" Studio: Autonomous Agentic Copilot</h2>
+          <span class="badge-ai">Agentic AI Powered</span>
+        </div>
+        <div style="font-size: 13px; color: var(--text-muted);">
+          Bridges the gap between raw data telemetry and compassionate leadership action.
+        </div>
+      </div>
+
+      <!-- Quick Prompt Chips -->
+      <div class="prompt-chips">
+        <button class="chip-btn" onclick="selectPromptChip('techConsulting')">
+          💻 Senior Consultants in Tech Consulting
+        </button>
+        <button class="chip-btn" onclick="selectPromptChip('gurgaonHubs')">
+          📍 Gurgaon & Bangalore Hub Turnover
+        </button>
+        <button class="chip-btn" onclick="selectPromptChip('managerBurnout')">
+          🔥 Burnt-Out Manager & Senior Manager Cohort
+        </button>
+        <button class="chip-btn" onclick="selectPromptChip('equityAudit')">
+          ⚖️ Gender & Tenure Pay Equity Audit
+        </button>
+      </div>
+
+      <!-- Copilot Interactive Search Bar -->
+      <div class="copilot-input-bar">
+        <input 
+          type="text" 
+          id="copilotInput" 
+          placeholder="Ask Humanizer Copilot (e.g., 'Analyze flight risk among Senior Consultants in Technology Consulting')..."
+          value="Analyze retention risk among Senior Consultants in Technology Consulting"
+        >
+        <button class="copilot-btn" id="copilotSubmitBtn">
+          <span>✨ Humanize with Agentic Copilot</span>
+        </button>
+      </div>
+
+      <!-- Agent Squad Execution Pipeline Trace -->
+      <div class="agent-trace" id="agentTrace">
+        <div class="agent-step done">✓ [DataExtractionAgent] Gold Telemetry Ingested</div>
+        <div class="agent-step done">✓ [RiskDiagnosticAgent] Predictive Drivers Classified</div>
+        <div class="agent-step done">✓ [HumanizerStorytellerAgent] Narrative Crafted</div>
+        <div class="agent-step done">✓ [GovernanceEthicsAgent] GDPR & Bias Audit: PASSED (SAFE)</div>
+      </div>
+
+      <!-- Dual Comparison: Cold Machine Data vs Humanized Leadership Narrative -->
+      <div class="comparison-container">
+        
+        <!-- Left: Cold Robotic Statistics -->
+        <div class="pane">
+          <div class="pane-header">
+            <div class="pane-title cold">
+              <span>🤖 Raw Machine Statistics (Traditional Analytics)</span>
+            </div>
+            <span style="font-size: 11px; color: var(--text-dim); font-family: var(--font-mono);">FORMAT: JSON / SQL MART</span>
+          </div>
+          <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+            Sterile quantitative telemetry. High cognitive friction for line managers and executive leaders.
+          </p>
+          <div class="code-box" id="coldJsonDisplay">
+{
+  "cohort": "Consulting.Technology.SeniorConsultant",
+  "sample_size": 420,
+  "attrition_velocity_annualized": 0.284,
+  "mean_compa_ratio": 0.884,
+  "mean_monthly_overtime_hrs": 36.8,
+  "burnout_index_mean": 74.2,
+  "ml_flight_risk_p90": 0.82,
+  "stat_significance_p_val": "< 0.0001",
+  "primary_correlates": ["compa_ratio_deficit", "sustained_overtime_q3"]
+}
+          </div>
+        </div>
+
+        <!-- Right: Humanized Leadership Narrative -->
+        <div class="pane" style="border-color: rgba(255, 230, 0, 0.4);">
+          <div class="pane-header">
+            <div class="pane-title human">
+              <span>💛 Humanized Leadership Narrative (The Humanizer Engine)</span>
+            </div>
+            <span style="font-size: 11px; color: var(--ey-yellow); font-weight: 700;">EXECUTIVE READY</span>
+          </div>
+          
+          <div class="human-narrative-content">
+            <!-- Executive Brief -->
+            <div class="narrative-block">
+              <h4>Executive Strategic Briefing</h4>
+              <p id="narrativeSummary" style="font-size: 13px; line-height: 1.6;">
+                Behind the 28.4% attrition spike among Technology Senior Consultants lies an acute talent crunch: consultants are operating at peak utilization (averaging 36.8 hours of monthly overtime on cloud architectures), while earning 11.6% below market benchmark. Replacing these 420 specialized practitioners carries an immediate commercial exposure of $59.8M in lost billings and recruiting costs.
+              </p>
+            </div>
+
+            <!-- Human Story Behind The Data -->
+            <div class="narrative-block" style="border-left-color: #3b82f6;">
+              <h4 style="color: #60a5fa;">The Human Story Behind The Data</h4>
+              <p id="narrativeHuman" style="font-size: 13px; line-height: 1.6; color: #cbd5e1;">
+                These consultants are not disengaged by choice—they take pride in delivering mission-critical client systems. However, chronic sprint compression coupled with below-market compa-ratios fosters the feeling that their personal sacrifices are treated merely as margin cushions. When external tech recruiters reach out with 20%+ premiums, fatigue makes saying 'yes' effortless.
+              </p>
+            </div>
+
+            <!-- 1-on-1 Conversation Guide -->
+            <div>
+              <h4 style="font-size: 13px; font-weight: 700; color: var(--ey-yellow); margin-bottom: 8px;">
+                Manager 1-on-1 Empathetic Conversation Guide:
+              </h4>
+              <ul class="guide-list" id="narrativeGuide">
+                <li>1. Acknowledge Delivery Heroics: Open by celebrating specific architectural milestones delivered over the last quarter before reviewing hours or backlog.</li>
+                <li>2. Explicitly Validate Workload Burnout: Ask: 'What part of our current sprint cadence feels most unmaintainable?' and listen without justification.</li>
+                <li>3. Commit to Concrete Relief: Announce the immediate onboarding of 2 offshore squads to absorb testing and operational documentation by month-end.</li>
+                <li>4. Proactive Equity Trajectory: Share their exact compensation band progression towards Manager rank, locking in a target mid-year equity true-up.</li>
+              </ul>
+            </div>
+
+            <!-- Interventions Playbook -->
+            <div>
+              <h4 style="font-size: 13px; font-weight: 700; color: var(--accent-green); margin-bottom: 8px;">
+                Strategic Interventions & ROI Playbook:
+              </h4>
+              <div id="narrativePlaybook" style="display: flex; flex-direction: column; gap: 8px;">
+                <!-- Populated dynamically via app.js -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Visual Analytics Charts Grid -->
+    <section class="charts-grid">
+      <div class="chart-card">
+        <h3>Service Line Attrition Velocity</h3>
+        <p>Annualized voluntary separation rate across EY core practices.</p>
+        <div class="canvas-wrapper">
+          <canvas id="chartDepartment"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>Compa-Ratio vs. Flight Risk Curve</h3>
+        <p>Direct correlation between salary midpoint deficit and probability of exit.</p>
+        <div class="canvas-wrapper">
+          <canvas id="chartCompaRatio"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>Overtime Hours vs. Burnout Index</h3>
+        <p>Impact of uncredited delivery overtime on physiological fatigue index.</p>
+        <div class="canvas-wrapper">
+          <canvas id="chartOvertime"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>Pulse Survey Sentiment Polarity</h3>
+        <p>NLP sentiment classification of anonymized consultant pulse feedback.</p>
+        <div class="canvas-wrapper">
+          <canvas id="chartSentiment"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- High-Risk Consultant Talent Mart Table -->
+    <section class="table-section">
+      <div class="table-header">
+        <div>
+          <h2 style="font-size: 18px; font-weight: 700;">High Flight-Risk Consultant Intervention Mart</h2>
+          <p style="font-size: 12px; color: var(--text-muted);">
+            Gold-layer dimensional entities flagged by GradientBoosting classifier for immediate retention intervention.
+          </p>
+        </div>
+        <div class="table-controls">
+          <select id="serviceLineFilter" class="filter-select">
+            <option value="All">All Service Lines</option>
+            <option value="Consulting">Consulting</option>
+            <option value="Strategy & Transactions">Strategy & Transactions</option>
+            <option value="Tax">Tax</option>
+            <option value="Assurance">Assurance</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="talent-table">
+          <thead>
+            <tr>
+              <th>Hashed ID (GDPR)</th>
+              <th>Service Line & Practice</th>
+              <th>Rank Level</th>
+              <th>Tenure</th>
+              <th>Compa-Ratio</th>
+              <th>Monthly OT</th>
+              <th>Burnout Index</th>
+              <th>Risk Tier</th>
+              <th>Humanizer Action</th>
+            </tr>
+          </thead>
+          <tbody id="talentTableBody">
+            <!-- Rendered dynamically by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 12px; color: var(--text-dim);">
+      <div>
+        <strong>HUMANIZER Platform</strong> • Designed for EY Data Analytics Specialist (C&I Digital Engagement)
+      </div>
+      <div>
+        Architect: <strong style="color: var(--text-main);">Sanjay Balan</strong> | Powered by Azure Synapse Lakehouse, Scikit-Learn & Agentic AI
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Modal Container for Individual Interventions -->
+  <div id="modalContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

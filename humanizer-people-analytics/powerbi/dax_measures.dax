@@ -1,0 +1,109 @@
+// ============================================================================
+// Enterprise DAX Calculation Measures - EY People Analytics & Talent Mart
+// Designed for Power BI Desktop & Service tabular models
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// 1. Core Headcount & Volume
+// ----------------------------------------------------------------------------
+[Total Active Headcount] = 
+DISTINCTCOUNT(gold_dim_employee[employee_key])
+
+[Total Attrition Headcount] = 
+CALCULATE(
+    COUNTROWS(gold_fact_attrition_risk),
+    gold_fact_attrition_risk[attrition_flag] = 1
+)
+
+[Regretted Attrition Count] = 
+CALCULATE(
+    COUNTROWS(gold_fact_attrition_risk),
+    gold_fact_attrition_risk[attrition_flag] = 1,
+    gold_fact_attrition_risk[is_regretted_attrition] = 1
+)
+
+// ----------------------------------------------------------------------------
+// 2. Turnover & Flight Rates
+// ----------------------------------------------------------------------------
+[Annualized Attrition Rate %] = 
+DIVIDE(
+    [Total Attrition Headcount],
+    [Total Active Headcount],
+    0
+)
+
+[Regretted Attrition Ratio %] = 
+DIVIDE(
+    [Regretted Attrition Count],
+    [Total Attrition Headcount],
+    0
+)
+
+[High Flight Risk Headcount] = 
+CALCULATE(
+    DISTINCTCOUNT(gold_fact_attrition_risk[employee_key]),
+    gold_fact_attrition_risk[burnout_risk_index] >= 65 || 
+    gold_fact_attrition_risk[compa_ratio] < 0.88
+)
+
+[High Flight Risk Rate %] = 
+DIVIDE(
+    [High Flight Risk Headcount],
+    [Total Active Headcount],
+    0
+)
+
+// ----------------------------------------------------------------------------
+// 3. Compensation Parity & Overtime Dynamics
+// ----------------------------------------------------------------------------
+[Average Compa-Ratio] = 
+AVERAGE(gold_fact_attrition_risk[compa_ratio])
+
+[Average Monthly Overtime Hours] = 
+AVERAGE(gold_fact_attrition_risk[monthly_overtime_hours])
+
+[Average Burnout Risk Index] = 
+AVERAGE(gold_fact_attrition_risk[burnout_risk_index])
+
+// ----------------------------------------------------------------------------
+// 4. Financial Impact & Risk Exposure
+// ----------------------------------------------------------------------------
+[Total Annual Payroll Exposure] = 
+SUM(gold_fact_attrition_risk[base_salary])
+
+// Enterprise benchmark: Replacing a skilled consultant costs ~150% of annual base salary
+[Estimated Turnover Cost Exposure USD] = 
+CALCULATE(
+    SUMX(
+        gold_fact_attrition_risk,
+        gold_fact_attrition_risk[base_salary] * 1.5
+    ),
+    gold_fact_attrition_risk[attrition_flag] = 1
+)
+
+[At-Risk Capital Exposure (High Flight Risk)] = 
+SUMX(
+    FILTER(
+        gold_fact_attrition_risk,
+        gold_fact_attrition_risk[burnout_risk_index] >= 65 || 
+        gold_fact_attrition_risk[compa_ratio] < 0.88
+    ),
+    gold_fact_attrition_risk[base_salary] * 1.5
+)
+
+// ----------------------------------------------------------------------------
+// 5. Survey & Engagement Sentiment
+// ----------------------------------------------------------------------------
+[Average Sentiment Polarity] = 
+AVERAGE(gold_fact_engagement_pulse[sentiment_polarity])
+
+[Net Engagement Score (Scale 1-5)] = 
+AVERAGEX(
+    gold_fact_engagement_pulse,
+    (
+        gold_fact_engagement_pulse[job_satisfaction_score] +
+        gold_fact_engagement_pulse[manager_relationship_score] +
+        gold_fact_engagement_pulse[work_life_balance_score] +
+        gold_fact_engagement_pulse[growth_opportunity_score]
+    ) / 4.0
+)

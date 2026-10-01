@@ -36,9 +36,15 @@ Then visit `http://localhost:8000` in your browser.
 ## 🛠️ Features & Highlights
 
 - **Confirmed Profile & Headline**: Customized to "Data Analyst" based in Coimbatore, Tamil Nadu (Open To Relocate).
-- **Interactive Project Deep-Dives**: Detailed modals explaining the 4-Tier Analytics Ladder, data volumes, statistical findings, and direct GitHub links.
-- **Dynamic Project Filtering**: Filter by All, AI & Machine Learning, Power BI & Tableau, or SQL & Relational Databases.
-- **Animated Impact Counters**: Highlighting 54k+ sales records, 50k+ HR records, and 30k+ labor records analyzed.
+- **Featured Enterprise Projects (6 High-Impact Systems)**:
+  1. **HUMANIZER | Enterprise People Analytics & Agentic AI Platform**: Azure Medallion Lakehouse, Gradient Boosting flight risk model (ROC-AUC 0.81), and Copilot Studio multi-agent squad.
+  2. **Enterprise Credit Risk & Loan Portfolio Intelligence Platform**: Basel III lending risk modeling across 165,535 records ($434.81M+ capital exposure), 6.6x delinquency surge analysis, SQL window liquidity rankings, and vectorized AML surveillance.
+  3. **AI Workforce Intelligence & Disruption Analytics**: 4-tier analytics ladder diagnosing automation exposure across 30,000 labor records and 8 global markets.
+  4. **HR Workforce & Attrition Analytics Suite**: Relational MySQL modeling and cross-platform dashboards (Power BI & Tableau) auditing 50,000 records.
+  5. **Insurance Portfolio Risk & Claims Analytics**: Actuarial analytics modeling ₹251M+ in claims liability and 2026 property expirations across 5,000 policies.
+  6. **Movie Industry Correlation & Revenue Analysis**: Statistical Pearson matrix and regression modeling identifying key box-office drivers.
+- **Interactive Project Deep-Dives**: Rich modal window detailing executive summaries, 4-tier architectures, verified metrics, key business insights, and direct GitHub links.
+- **Dynamic Project Filtering & Live Search**: Instant multi-keyword search bar and filter tabs (All, Python, SQL, Power BI, Tableau, Machine Learning).
 - **Dark & Light Mode Switcher**: Preserves user theme preference using `localStorage`.
 - **Contact & Direct Email Copy**: One-click clipboard copy for `sanjaybalan3294@gmail.com` with toast confirmation.
 - **Full Responsive Design**: Optimized across mobile phones, tablets, laptops, and ultra-wide screens.

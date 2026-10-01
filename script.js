@@ -30,6 +30,31 @@ const projectsData = {
       { label: 'Browse Code & Architecture', url: 'humanizer-people-analytics/README.md' }
     ]
   },
+  'credit-risk': {
+    title: 'Enterprise Credit Risk & Loan Portfolio Intelligence Platform',
+    badge: 'Banking Analytics & Risk Intelligence',
+    tagline: 'Production-grade banking analytics platform modeling $434.81M+ in lending capital, default/delinquency segregation, and branch liquidity surveillance across 165,535 records.',
+    metrics: [
+      { label: 'Capital Exposure', value: '$434.81M' },
+      { label: 'Records Analyzed', value: '165,535' },
+      { label: 'Delinquency Surge', value: '6.6x (A➔G)' },
+      { label: 'AML Outflows Flagged', value: '5,252 Txns' }
+    ],
+    overview: 'An enterprise-grade Banking Decision Management & Credit Risk Analytics platform engineered to ingest, clean, standardize, model, and visualize 165,535 records spanning $434.81M+ in funded lending exposure and $254.89M in retail cash flows across six regional bank branches. Incorporates Basel III/Dodd-Frank surveillance principles, SQL window analytics (DENSE_RANK), high-velocity AML debit outflow rules, and dual-axis Tableau dashboards.',
+    architecture: [
+      { step: 'Tier 1: High-Volume ETL & Data Normalization (Pandas/openpyxl)', desc: 'Dual-workbook ingestion processing 65.5k loan accounts (52 attributes) and 100k retail transactions with regex column sanitization, duplicate header elimination, and ISO-8601 temporal standardization.' },
+      { step: 'Tier 2: Vectorized AML Risk Engine & Decision Rules', desc: 'Engineered vectorized rule np.where((Transaction_Type == "Debit") & (Amount > 4500), 1, 0) isolating 5,252 high-risk outbound debit transfers exceeding regulatory reporting thresholds.' },
+      { step: 'Tier 3: Relational SQL Risk Modeling (MySQL 8.0 & SQLAlchemy)', desc: 'Built PyMySQL connection pool streaming cleaned datasets into MySQL. Authored advanced queries with CTEs and DENSE_RANK() window functions to evaluate Grade A-G credit risk and branch net liquidity.' },
+      { step: 'Tier 4: Tableau Decision Management BI Suite', desc: 'Constructed Tableau Public workbook with dual-axis synchronized risk marks (exposure bars vs delinquency/default trend lines), US geographic underwriting choropleth map, and interactive cross-filtering by grade and disbursement year.' }
+    ],
+    keyInsights: [
+      'Proved that while baseline default rates remain stable between 2.38% and 2.96%, delinquency serves as the primary leading indicator of credit deterioration, surging 6.6x from Grade A (3.92%) to Grade G (25.95%).',
+      'Identified severe liquidity bifurcation where surplus branches (East, Suburban, North: +$699.8k) contrast with deficit branches (Downtown, City Center, Main: -$381.7k), recommending automated EoD Zero-Balance Account sweeps.',
+      'Main Branch (902 flags) and Downtown Branch (901 flags) accounted for 34.3% of all high-risk debit transactions over $4,500, isolating institutional AML compliance exposure.'
+    ],
+    stack: ['Python 3.12', 'MySQL 8.0', 'Tableau Public', 'Pandas', 'SQLAlchemy', 'PyMySQL', 'Window Functions', 'ETL Pipeline'],
+    githubUrl: 'https://github.com/sanjaybalan3294/Enterprise-Credit-Risk-Loan-Portfolio-Intelligence'
+  },
   'ai-workforce': {
     title: 'AI Workforce Intelligence & Disruption Analytics',
     badge: 'Flagship AICTE | IBM SkillsBuild Project',
